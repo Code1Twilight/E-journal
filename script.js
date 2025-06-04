@@ -1,9 +1,10 @@
-const totalPages = 4; // Change this if you add more entries like entry5.txt
+const totalPages = 4; // Update this if you add more entries like entry5.txt
 let currentPage = 1;
 
 function renderPage() {
   const page = document.getElementById('page-content');
   page.classList.add('turning');
+  page.scrollTop = 0; // Reset scroll position when changing page
 
   fetch(`entries/entry${currentPage}.txt`)
     .then(response => {
@@ -17,12 +18,14 @@ function renderPage() {
         page.innerText = text;
         document.getElementById('page-number').innerText = `Page ${currentPage}`;
         page.classList.remove('turning');
+        updateButtons();
       }, 200);
     })
     .catch(error => {
       page.innerText = "Oops! Couldn't load this entry.";
       console.error(error);
       page.classList.remove('turning');
+      updateButtons();
     });
 }
 
@@ -38,6 +41,11 @@ function prevPage() {
     currentPage--;
     renderPage();
   }
+}
+
+function updateButtons() {
+  document.querySelector('button[onclick="prevPage()"]').disabled = currentPage === 1;
+  document.querySelector('button[onclick="nextPage()"]').disabled = currentPage === totalPages;
 }
 
 renderPage();
