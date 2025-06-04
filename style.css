@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Great+Vibes&display=swap');
+
+body {
+  font-family: 'EB Garamond', serif;
+  background: #e0d4b7;
+  background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+  background-repeat: repeat;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  color: #3b2f2f;
+}
+
+.book-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Great Vibes', cursive;
+  color: #4c3a1e;
+}
+
+.book-title h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.book-title .subtitle {
+  font-family: 'EB Garamond', serif;
+  font-size: 1.2rem;
+  font-style: italic;
+  margin-top: -10px;
+  color: #5e4b2c;
+}
+
+.book {
+  width: 90%;
+  max-width: 700px;
+  height: 68vh;
+  background: #fdf5e6;
+  border: 2px solid #b3935b;
+  box-shadow: 5px 5px 20px rgba(0,0,0,0.2);
+  padding: 40px;
+  overflow-y: auto;
+  border-radius: 12px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.page {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  white-space: pre-line;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.page.turning {
+  transform: rotateY(5deg);
+  opacity: 0.8;
+}
+
+.navigation {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background: #d4c4a8;
+  border: 1px solid #a39171;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'EB Garamond', serif;
+  color: #3b2f2f;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #e2d3b3;
+}
+
+#page-number {
+  font-weight: bold;
+}
+
+.footer {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #5e4b2c;
+}
