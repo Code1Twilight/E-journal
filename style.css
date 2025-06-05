@@ -138,3 +138,59 @@ button:disabled {
     font-size: 0.9rem;
   }
 }
+
+.top-controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+#search-input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 250px;
+  font-family: 'EB Garamond', serif;
+}
+
+#theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+:root {
+  --bg: #e0d4b7;
+  --text: #3b2f2f;
+  --card: #fdf5e6;
+  --border: #b3935b;
+}
+
+body.dark-mode {
+  --bg: #1d1b16;
+  --text: #f0e7d8;
+  --card: #2d2a24;
+  --border: #5e523f;
+  background-image: none;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+.book {
+  background-color: var(--card);
+  border-color: var(--border);
+}
+
+button,
+#search-input {
+  background-color: var(--card);
+  color: var(--text);
+  border-color: var(--border);
+}
