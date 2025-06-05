@@ -54,3 +54,29 @@ const saved = localStorage.getItem('journalPage');
 if (saved) currentPage = parseInt(saved);
 
 renderPage();
+
+document.getElementById('search-input').addEventListener('input', function (e) {
+  const term = e.target.value.toLowerCase();
+  const page = document.getElementById('page-content');
+  if (!term) {
+    renderPage();
+    return;
+  }
+
+  fetch(`entries/entry${currentPage}.txt`)
+    .then(res => res.text())
+    .then(text => {
+      if (text.toLowerCase().includes(term)) {
+        page.innerText = text;
+      } else {
+        page.innerText = `No match found for "${term}" on this page.`;
+      }
+    });
+});
+
+const toggleButton = document.getElementById('theme-toggle');
+toggleButton.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+  const isDark = document.body.classList.contains('dark-mode');
+  toggleButton.textContent = isDark ? '☀️' : '🌙';
+});
