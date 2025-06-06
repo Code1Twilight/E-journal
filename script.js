@@ -1,4 +1,4 @@
-const totalPages = 4; // Update this as you add more entries
+const totalPages = 8; // Update this as you add more entries
 let currentPage = 1;
 
 function renderPage() {
